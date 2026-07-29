@@ -4,6 +4,9 @@ html{scroll-behavior:smooth}
 body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);line-height:1.6}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #d89770;outline-offset:4px}
+.skip-link{position:fixed;left:12px;top:12px;z-index:1000;background:white;color:var(--ink);padding:10px 14px;border-radius:6px;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
 .site-header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(255,253,249,.95);backdrop-filter:blur(14px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:12px}
 .brand-mark{width:42px;height:42px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:17px}
@@ -33,6 +36,8 @@ a{color:inherit;text-decoration:none}
 .compact .eyebrow{margin-bottom:8px}
 .lodgify-wrap{min-width:0}
 .booking-note{grid-column:2;font-size:12px;opacity:.6;margin:-28px 0 0}
+.booking-highlights{grid-column:2;display:flex;flex-wrap:wrap;gap:8px;margin-top:-12px}
+.booking-highlights span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12px}
 .section{padding:120px 7vw}
 .story{display:grid;grid-template-columns:1.02fr .98fr;gap:8vw;align-items:center}
 .image-frame{height:680px}
@@ -65,6 +70,8 @@ a{color:inherit;text-decoration:none}
 .review-score>span{font-family:var(--serif);font-size:96px;line-height:1}
 .review-score div{letter-spacing:.1em}
 .review-score small{display:block;letter-spacing:0;margin-top:7px}
+.review-score-link{display:flex;align-items:center;gap:20px}
+.review-score-link:hover small{text-decoration:underline}
 .review-quotes{display:grid;gap:0}
 .review-quotes blockquote{font-family:var(--serif);font-size:34px;line-height:1.2;margin:0;padding:28px 0;border-bottom:1px solid var(--line)}
 .final-cta{background:var(--terracotta);color:white;padding:95px 7vw;display:flex;justify-content:space-between;align-items:end;gap:40px}
@@ -83,6 +90,7 @@ footer>small{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding
 .hero-facts span{padding:14px 6vw}
 .booking-strip{grid-template-columns:1fr}
 .booking-note{grid-column:1;margin:0}
+.booking-highlights{grid-column:1;margin:0}
 .story,.section-dark,.reviews{grid-template-columns:1fr}
 .image-frame{height:500px}
 .room-grid{grid-template-columns:repeat(2,1fr)}
@@ -243,6 +251,7 @@ footer{padding:55px 6vw 30px}
 .breadcrumb{font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
 .breadcrumb a{border-bottom:1px solid rgba(255,255,255,.5)}
 .content-narrow{max-width:900px;margin:0 auto}
+.content-narrow h1{font-family:var(--serif);font-size:clamp(54px,7vw,96px);font-weight:400;line-height:.98;margin:0 0 28px}
 .content-narrow h2,.content-grid h2{font-family:var(--serif);font-size:clamp(42px,5vw,68px);font-weight:400;line-height:1.02;margin:0 0 24px}
 .content-narrow h3,.content-grid h3{font-family:var(--serif);font-size:32px;font-weight:400;line-height:1.1;margin:38px 0 10px}
 .content-narrow p,.content-grid p{font-size:17px}
@@ -265,11 +274,29 @@ footer{padding:55px 6vw 30px}
 .contact-card h2{font-family:var(--serif);font-size:46px;font-weight:400;line-height:1;margin:0 0 22px}
 .contact-card a{display:block;margin:14px 0;font-weight:600}
 .text-link{font-weight:600;border-bottom:1px solid currentColor}
+.travel-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:38px}
+.travel-facts div{background:var(--paper);padding:25px}
+.travel-facts strong,.travel-facts span{display:block}
+.travel-facts strong{font-family:var(--serif);font-size:28px;font-weight:400}
+.travel-facts span{font-size:13px;margin-top:5px}
+
+.consent-banner{position:fixed;left:24px;right:24px;bottom:24px;z-index:500;background:#18211d;color:white;padding:22px 24px;border-radius:14px;box-shadow:0 20px 55px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:space-between;gap:32px}
+.consent-banner[hidden]{display:none}
+.consent-banner strong{font-family:var(--serif);font-size:25px;font-weight:400}
+.consent-banner p{margin:4px 0;font-size:14px;max-width:760px}
+.consent-banner a{text-decoration:underline;font-size:13px}
+.consent-actions{display:flex;gap:10px;flex:0 0 auto}
+.consent-actions button{font:inherit;font-weight:600;border-radius:999px;padding:11px 17px;cursor:pointer}
+.consent-decline{background:transparent;color:white;border:1px solid rgba(255,255,255,.55)}
+.consent-accept{background:white;color:var(--ink);border:1px solid white}
+.preference-button{font:inherit;background:var(--ink);color:white;border:0;border-radius:999px;padding:13px 19px;cursor:pointer;font-weight:600}
+.mobile-book-bar{display:none}
 
 @media(max-width:900px){.faq-grid,.content-grid,.contact-layout{grid-template-columns:1fr}
 .page-cards{grid-template-columns:1fr 1fr}
 .page-hero{min-height:500px}
 .gallery-page{grid-template-columns:1fr 1fr}
+.travel-facts{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){.faq-grid,.page-cards{grid-template-columns:1fr}
 .page-hero{min-height:540px}
@@ -279,4 +306,10 @@ footer{padding:55px 6vw 30px}
 .gallery-page{display:flex;overflow:auto;scroll-snap-type:x mandatory}
 .gallery-page img{min-width:82vw;height:420px;scroll-snap-align:start}
 .contact-card{padding:30px}
+.travel-facts{grid-template-columns:1fr}
+.consent-banner{left:12px;right:12px;bottom:76px;display:block;padding:20px}
+.consent-actions{margin-top:15px}
+.consent-actions button{flex:1}
+.mobile-book-bar{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:400;background:var(--terracotta);color:white;text-align:center;padding:14px 18px;border-radius:999px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.24)}
+body{padding-bottom:68px}
 }
