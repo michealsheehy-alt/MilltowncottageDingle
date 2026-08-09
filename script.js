@@ -136,9 +136,15 @@ const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
 const mobileBook = document.createElement('a');
+const isRyderCupPage = window.location.pathname === '/ryder-cup-2027-accommodation-dingle/';
 mobileBook.className = 'mobile-book-bar';
-mobileBook.href = window.location.pathname === '/' ? '#book' : '/#book';
-mobileBook.textContent = 'Check availability';
+if (isRyderCupPage) {
+  mobileBook.href = 'mailto:michealsheehy@gmail.com?subject=Ryder%20Cup%202027%20booking%20enquiry';
+  mobileBook.textContent = 'Email for Ryder Cup stays';
+} else {
+  mobileBook.href = window.location.pathname === '/' ? '#book' : '/#book';
+  mobileBook.textContent = 'Check availability';
+}
 document.body.appendChild(mobileBook);
 
 document.addEventListener('click', (event) => {
