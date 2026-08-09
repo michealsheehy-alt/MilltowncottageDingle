@@ -313,3 +313,36 @@ footer{padding:55px 6vw 30px}
 .mobile-book-bar{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:400;background:var(--terracotta);color:white;text-align:center;padding:14px 18px;border-radius:999px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.24)}
 body{padding-bottom:68px}
 }
+
+/* Ryder Cup 2027 */
+.ryder-cup{background:#18211d;color:white;display:grid;grid-template-columns:.88fr 1.12fr;min-height:760px}
+.ryder-cup-visual{position:relative;min-height:760px;overflow:hidden}
+.ryder-cup-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,24,20,.7),rgba(16,24,20,.05) 65%)}
+.ryder-cup-badge{position:absolute;left:38px;bottom:38px;z-index:1;min-width:250px;padding:22px 24px;background:rgba(24,33,29,.82);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(12px)}
+.ryder-cup-badge span,.ryder-cup-badge strong,.ryder-cup-badge small{display:block}
+.ryder-cup-badge span{font-family:var(--serif);font-size:68px;line-height:.85}
+.ryder-cup-badge strong{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-top:14px}
+.ryder-cup-badge small{font-size:12px;opacity:.72;margin-top:3px}
+.ryder-cup-copy{padding:100px 7vw 100px 6vw;display:flex;flex-direction:column;justify-content:center}
+.ryder-cup-copy h2{font-family:var(--serif);font-size:clamp(48px,5.2vw,78px);font-weight:400;line-height:.98;margin:0 0 28px}
+.ryder-cup-copy>p:not(.eyebrow):not(.ryder-note){max-width:680px;font-size:16px}
+.ryder-facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.2);margin:28px 0}
+.ryder-facts div{background:#26342e;padding:20px}
+.ryder-facts strong,.ryder-facts span{display:block}
+.ryder-facts strong{font-family:var(--serif);font-size:25px;font-weight:400;line-height:1.05}
+.ryder-facts span{font-size:12px;opacity:.72;margin-top:6px}
+.ryder-note{font-size:13px;opacity:.78;margin:8px 0 28px;max-width:680px}
+.ryder-actions{display:flex;align-items:center;flex-wrap:wrap;gap:22px}
+@media(max-width:900px){.ryder-cup{grid-template-columns:1fr;min-height:auto}
+.ryder-cup-visual{min-height:500px}
+.ryder-cup-copy{padding:85px 6vw}
+}
+@media(max-width:560px){.ryder-cup-visual{min-height:380px}
+.ryder-cup-badge{left:20px;right:20px;bottom:20px;min-width:0;padding:18px 20px}
+.ryder-cup-badge span{font-size:56px}
+.ryder-cup-copy{padding:75px 6vw}
+.ryder-cup-copy h2{font-size:46px}
+.ryder-facts{grid-template-columns:1fr}
+.ryder-actions{align-items:flex-start;flex-direction:column}
+}
+
