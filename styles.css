@@ -70,6 +70,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #d8
 .guest-guide-answer h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:18px 0 7px;color:var(--terracotta)}
 .guest-guide-answer ol{margin:0;padding-left:20px;font-size:15px}
 .guest-guide-answer li{padding:2px 0}
+.guest-guide-private{margin-top:14px!important;color:rgba(37,48,43,.72)}
 .house-rules h4:first-child{margin-top:0}
 .guest-guide-alert{margin-top:24px;background:#7f3f2d;color:white;padding:34px 38px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
 .guest-guide-alert>span{border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:7px 12px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
